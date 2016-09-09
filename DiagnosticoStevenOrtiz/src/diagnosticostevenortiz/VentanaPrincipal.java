@@ -5,6 +5,8 @@
  */
 package diagnosticostevenortiz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estudiante
@@ -36,6 +38,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnInvertir = new javax.swing.JButton();
         btnImprimir = new javax.swing.JButton();
         btnArreglo = new javax.swing.JButton();
+        btnEstudiante = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +78,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnEstudiante.setText("Estudiante");
+        btnEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstudianteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,7 +113,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnImprimir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnArreglo)))
+                                .addComponent(btnArreglo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEstudiante)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -119,11 +131,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInvertir)
                     .addComponent(btnImprimir)
-                    .addComponent(btnArreglo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
+                    .addComponent(btnArreglo)
+                    .addComponent(btnEstudiante))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(lblResultados)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -142,12 +155,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
        logica.Variables();
+       txtResultados.setText(logica.getTextoResultado());
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnArregloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArregloActionPerformed
         logica.ArregloCaracteres();
-        System.out.println("xkjnf");
+        txtResultados.setText(logica.getTextoResultado());
     }//GEN-LAST:event_btnArregloActionPerformed
+
+    private void btnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudianteActionPerformed
+        Estudiante estudiante = new Estudiante("Steven", "Ortiz Alvarez","snortiz@est.utn.ac.cr", "Platanar",207370693, 87408718);
+        txtResultados.setText(estudiante.toString());
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre del estudiante");
+        String direccion = JOptionPane.showInputDialog("Ingrese la direccion del estudiante");
+    }//GEN-LAST:event_btnEstudianteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +208,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnArreglo;
     private javax.swing.JButton btnEliminarEspacios;
+    private javax.swing.JButton btnEstudiante;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnInvertir;
     private javax.swing.JScrollPane jScrollPane1;
