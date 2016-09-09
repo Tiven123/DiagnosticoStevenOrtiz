@@ -18,6 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -39,6 +40,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnImprimir = new javax.swing.JButton();
         btnArreglo = new javax.swing.JButton();
         btnEstudiante = new javax.swing.JButton();
+        btnSetMatriz = new javax.swing.JButton();
+        btnAsignarDatos = new javax.swing.JButton();
+        btnMax = new javax.swing.JButton();
+        btnMin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,38 +90,52 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnSetMatriz.setText("setMatriz");
+
+        btnAsignarDatos.setText("asignarDatos");
+
+        btnMax.setText("Max");
+
+        btnMin.setText("Min");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblDigiteFrase)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFrase, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnEliminarEspacios)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtFrase, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(lblResultados)))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(166, 166, 166)
-                                .addComponent(lblResultados))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addComponent(btnEliminarEspacios)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnInvertir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnImprimir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnArreglo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEstudiante))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSetMatriz)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAsignarDatos)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnEstudiante)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(btnMax)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnMin)))
+                        .addGap(0, 2, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -126,16 +145,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDigiteFrase)
                     .addComponent(txtFrase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEliminarEspacios))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminarEspacios)
                     .addComponent(btnInvertir)
                     .addComponent(btnImprimir)
                     .addComponent(btnArreglo)
                     .addComponent(btnEstudiante))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(lblResultados)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnSetMatriz)
+                            .addComponent(btnAsignarDatos)
+                            .addComponent(btnMax)
+                            .addComponent(btnMin))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblResultados)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -168,6 +195,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         txtResultados.setText(estudiante.toString());
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre del estudiante");
         String direccion = JOptionPane.showInputDialog("Ingrese la direccion del estudiante");
+        estudiante.setNombre(nombre);
+        estudiante.setDireccion(direccion);
+        txtResultados.setText(txtResultados.getText()+"\n"+estudiante.toString());
     }//GEN-LAST:event_btnEstudianteActionPerformed
 
     /**
@@ -207,10 +237,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnArreglo;
+    private javax.swing.JButton btnAsignarDatos;
     private javax.swing.JButton btnEliminarEspacios;
     private javax.swing.JButton btnEstudiante;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnInvertir;
+    private javax.swing.JButton btnMax;
+    private javax.swing.JButton btnMin;
+    private javax.swing.JButton btnSetMatriz;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDigiteFrase;
     private javax.swing.JLabel lblResultados;

@@ -24,39 +24,45 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="lblDigiteFrase" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtFrase" min="-2" pref="180" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnEliminarEspacios" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
-                              <Component id="lblResultados" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="lblResultados" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btnEliminarEspacios" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnInvertir" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnImprimir" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnArreglo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnEstudiante" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="btnSetMatriz" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnAsignarDatos" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnMax" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnMin" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -71,17 +77,28 @@
                   <Component id="lblDigiteFrase" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtFrase" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEliminarEspacios" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnInvertir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnImprimir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnArreglo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEstudiante" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
-              <Component id="lblResultados" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnSetMatriz" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAsignarDatos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMax" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMin" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lblResultados" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <Component id="jScrollPane1" min="-2" pref="159" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -155,6 +172,26 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEstudianteActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSetMatriz">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="setMatriz"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsignarDatos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="asignarDatos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMax">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Max"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Min"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
