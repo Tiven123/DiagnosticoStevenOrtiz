@@ -60,6 +60,8 @@
                               <Component id="btnMax" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnMin" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnToString" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
@@ -90,6 +92,7 @@
                           <Component id="btnAsignarDatos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnMax" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnMin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnToString" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -177,11 +180,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="setMatriz"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSetMatrizActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAsignarDatos">
       <Properties>
         <Property name="text" type="java.lang.String" value="asignarDatos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAsignarDatosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnMax">
       <Properties>
@@ -192,6 +201,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Min"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnToString">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="toString"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnToStringActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

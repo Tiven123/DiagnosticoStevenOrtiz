@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
     Logica logica = new Logica();
+    Matriz matriz = new Matriz();
     /**
      * Creates new form VentanaPrincipal
      */
@@ -44,6 +45,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnAsignarDatos = new javax.swing.JButton();
         btnMax = new javax.swing.JButton();
         btnMin = new javax.swing.JButton();
+        btnToString = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,12 +93,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnSetMatriz.setText("setMatriz");
+        btnSetMatriz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetMatrizActionPerformed(evt);
+            }
+        });
 
         btnAsignarDatos.setText("asignarDatos");
+        btnAsignarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsignarDatosActionPerformed(evt);
+            }
+        });
 
         btnMax.setText("Max");
 
         btnMin.setText("Min");
+
+        btnToString.setText("toString");
+        btnToString.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToStringActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,7 +153,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnMax)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnMin)))
+                                .addComponent(btnMin)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnToString)))
                         .addGap(0, 2, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -157,7 +178,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                             .addComponent(btnSetMatriz)
                             .addComponent(btnAsignarDatos)
                             .addComponent(btnMax)
-                            .addComponent(btnMin))
+                            .addComponent(btnMin)
+                            .addComponent(btnToString))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -199,6 +221,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         estudiante.setDireccion(direccion);
         txtResultados.setText(txtResultados.getText()+"\n"+estudiante.toString());
     }//GEN-LAST:event_btnEstudianteActionPerformed
+
+    private void btnSetMatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetMatrizActionPerformed
+        matriz.setMatriz();
+    }//GEN-LAST:event_btnSetMatrizActionPerformed
+
+    private void btnAsignarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarDatosActionPerformed
+        matriz.asignarDatos();
+    }//GEN-LAST:event_btnAsignarDatosActionPerformed
+
+    private void btnToStringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToStringActionPerformed
+        txtResultados.setText(matriz.toString());
+    }//GEN-LAST:event_btnToStringActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,6 +279,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnMax;
     private javax.swing.JButton btnMin;
     private javax.swing.JButton btnSetMatriz;
+    private javax.swing.JButton btnToString;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDigiteFrase;
     private javax.swing.JLabel lblResultados;
